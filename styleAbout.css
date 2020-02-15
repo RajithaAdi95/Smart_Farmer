@@ -1,0 +1,21 @@
+section{
+	border-style:solid;
+	border-color:green;
+	border-width:10;
+	width:50%;
+}
+h1{
+	font-family:arial;
+	background-color:powderblue;
+}
+p{
+	/*font-size:18pt;*/
+	font-family;arial,sans-serif;
+}
+em{
+	font-weight:bold;
+	color:red;
+}
+
+
+<link rel="stylesheet" type="text/css" href="styleAbout.css">
