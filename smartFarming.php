@@ -50,7 +50,7 @@
 		
 		<div class="menu-bar">
 			<ul>
-				<li><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
+				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
 				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
 				<li class="active"><a href="#">SmartFarming</a></li>
 				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
@@ -109,7 +109,7 @@
 
 				<div class="col-md-4 mid-row">
 					<h4>Follow Us</h4>
-					<h3><a href="index.php">Smart Farming</a></h3>
+					<h3><a href="index.html">Smart Farming</a></h3>
 					<h6>Copyright <i class="fa fa-copyright"></i> 2019. All Rights reserved.</h6>
 					<!--<p>Facebbo Twitter Youtube</p>
 					<div class="social-icon">
