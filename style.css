@@ -273,6 +273,21 @@ body {
 	animation: 20s slider infinite;
 }
 
+.gallery{
+	margin: 10px 50px;
+}
+.gallery img{
+	width: 250px;
+	height: 200px;
+	padding: 5px;
+	filter: grayscale(20%);
+	transition: 2s;
+}
+.gallery img:hover{
+	filter: grayscale(0);
+	transform: scale(1.1);
+}
+
 
 footer{
 	background-color: #000;
