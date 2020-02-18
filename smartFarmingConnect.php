@@ -70,13 +70,13 @@
 					<br></b><br><button type="submit" name="search">search</button>
 				</form>
 
-				<table border="1" width="500" cellpadding="10" cellspacing="25">
+				<table border="4" width="500" cellpadding="8" cellspacing="20">
 					<tr>
 						<th>Area</th>
 						<th>Month</th>
 						<th>Crop</th>
 					</tr>
-				</table>
+				
 
 				<?php
 					$conn=mysqli_connect("localhost","root","","testPHP");
@@ -101,12 +101,14 @@
 						}
 					}
 					else{
-							echo "Wrong Input,Check Again";
+							echo "No Crop Available for your Searching.......";
 					}
 				?>
+				</table>
 			</div>
 			</center>
 			
+			<br>
 		<!--<div>
 			<br>
 			<p>
