@@ -62,6 +62,7 @@
 
 
 			<center>
+			<br>
 			<div>
 				<form action="smartFarmingConnect.php" method="POST">
 					Area : <input type="text" name="area" placeholder="">
@@ -69,15 +70,40 @@
 					<br></b><br><button type="submit" name="search">search</button>
 				</form>
 
-				<br>
-
-				<table border="2" width="500" cellpadding="10" cellspacing="25">
+				<table border="1" width="500" cellpadding="10" cellspacing="25">
 					<tr>
 						<th>Area</th>
 						<th>Month</th>
 						<th>Crop</th>
 					</tr>
 				</table>
+
+				<?php
+					$conn=mysqli_connect("localhost","root","","testPHP");
+					$area=$_POST['area'];
+					$month=$_POST['month'];
+					if($area || $month){
+						$show="SELECT * FROM crop where area='$area' AND month='$month'";
+						$result=mysqli_query($conn,$show);
+						while ($rows=mysqli_fetch_array($result)) {
+							echo "<tr>";
+							echo "<td>";
+							echo $rows['area'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['month'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['crop'];
+							echo "</td>";
+							echo "</tr>";
+							echo "<br/>";
+						}
+					}
+					else{
+							echo "Wrong Input,Check Again";
+					}
+				?>
 			</div>
 			</center>
 			
