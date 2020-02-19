@@ -66,26 +66,29 @@
 			<div>
 				<form action="smartFarmingConnect.php" method="POST">
 					Area : <input type="text" name="area" placeholder="">
-					Month : <input type="text" name="month" placeholder="">
+				<!--	Month : <input type="text" name="month" placeholder="">-->
 					Crop : <input type="text" name="crop" placeholder="">
 					<br></b><br><button type="submit" name="search">search</button>
 				</form>
 
-				<table border="4" width="500" cellpadding="8" cellspacing="20">
+				<table border="4" width="90%" cellpadding="8" cellspacing="20">
 					<tr>
 						<th>Area</th>
-						<th>Month</th>
 						<th>Crop</th>
+						<th>Tempreature</th>
+						<th>Soil</th>
+						<th>Fertilizer</th>
+						<th>Time Period</th>
 					</tr>
 				
 
 				<?php
 					$conn=mysqli_connect("localhost","root","","testPHP");
 					$area=$_POST['area'];
-					$month=$_POST['month'];
+					/*$month=$_POST['month'];*/
 					$crop=$_POST['crop'];
 					if($area || $crop){
-						$show="SELECT * FROM crop where area='$area' AND (crop='$crop' OR month='$month')";
+						$show="SELECT * FROM crop where area='$area' AND crop='$crop'";
 						$result=mysqli_query($conn,$show);
 						while ($rows=mysqli_fetch_array($result)) {
 							echo "<tr>";
@@ -93,10 +96,19 @@
 							echo $rows['area'];
 							echo "</td>";
 							echo "<td>";
-							echo $rows['month'];
+							echo $rows['crop'];
 							echo "</td>";
 							echo "<td>";
-							echo $rows['crop'];
+							echo $rows['temperature'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['soil'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['fertilizer'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['timeperiod'];
 							echo "</td>";
 							echo "</tr>";
 							echo "<br/>";

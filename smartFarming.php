@@ -65,7 +65,7 @@
 			<div>
 				<form action="smartFarmingConnect.php" method="POST">
 					Area : <input type="text" name="area" placeholder="">
-					Month : <input type="text" name="month" placeholder="">
+				<!--	Month : <input type="text" name="month" placeholder="">-->
 					Crop : <input type="text" name="crop" placeholder="">
 					<br></b><br><button type="submit" name="search">search</button>
 				</form>
@@ -75,8 +75,11 @@
 			<!--	<table border="2" width="500" cellpadding="10" cellspacing="25">
 					<tr>
 						<th>Area</th>
-						<th>Month</th>
 						<th>Crop</th>
+						<th>Tempreature</th>
+						<th>Soil</th>
+						<th>Fertilizer</th>
+						<th>Time Period</th>
 					</tr>
 				</table>	-->
 			</div>
