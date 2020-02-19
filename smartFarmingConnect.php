@@ -67,6 +67,7 @@
 				<form action="smartFarmingConnect.php" method="POST">
 					Area : <input type="text" name="area" placeholder="">
 					Month : <input type="text" name="month" placeholder="">
+					Crop : <input type="text" name="crop" placeholder="">
 					<br></b><br><button type="submit" name="search">search</button>
 				</form>
 
@@ -82,8 +83,9 @@
 					$conn=mysqli_connect("localhost","root","","testPHP");
 					$area=$_POST['area'];
 					$month=$_POST['month'];
-					if($area || $month){
-						$show="SELECT * FROM crop where area='$area' AND month='$month'";
+					$crop=$_POST['crop'];
+					if($area || $crop){
+						$show="SELECT * FROM crop where area='$area' AND (crop='$crop' OR month='$month')";
 						$result=mysqli_query($conn,$show);
 						while ($rows=mysqli_fetch_array($result)) {
 							echo "<tr>";

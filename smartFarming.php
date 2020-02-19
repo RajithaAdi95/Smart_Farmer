@@ -66,6 +66,7 @@
 				<form action="smartFarmingConnect.php" method="POST">
 					Area : <input type="text" name="area" placeholder="">
 					Month : <input type="text" name="month" placeholder="">
+					Crop : <input type="text" name="crop" placeholder="">
 					<br></b><br><button type="submit" name="search">search</button>
 				</form>
 
