@@ -71,13 +71,13 @@
 
 				<br>
 
-				<table border="2" width="500" cellpadding="10" cellspacing="25">
+			<!--	<table border="2" width="500" cellpadding="10" cellspacing="25">
 					<tr>
 						<th>Area</th>
 						<th>Month</th>
 						<th>Crop</th>
 					</tr>
-				</table>
+				</table>	-->
 			</div>
 			</center>
 			
