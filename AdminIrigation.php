@@ -52,7 +52,7 @@
 				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
 				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
 				<li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
-				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>Irigation Department</a></li>
+				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>Irigation</a></li>
 			</ul>
 		</div>
 		</div>

@@ -88,7 +88,7 @@
 					/*$month=$_POST['month'];*/
 					$crop=$_POST['crop'];
 					if($area || $crop){
-						$show="SELECT * FROM crop where area='$area' AND crop='$crop'";
+						$show="SELECT * FROM crop where area='$area' OR crop='$crop'";
 						$result=mysqli_query($conn,$show);
 						while ($rows=mysqli_fetch_array($result)) {
 							echo "<tr>";
