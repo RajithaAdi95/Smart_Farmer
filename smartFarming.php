@@ -74,9 +74,11 @@
 
 			<!--	<table border="2" width="500" cellpadding="10" cellspacing="25">
 					<tr>
-						<th>Area</th>
-						<th>Crop</th>
+						<th>Crop ID</th>
+						<th>Crop Name</th>
+						<th>District Name</th>
 						<th>Tempreature</th>
+						<th>Water Level</th>
 						<th>Soil</th>
 						<th>Fertilizer</th>
 						<th>Time Period</th>
