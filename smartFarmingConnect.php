@@ -132,14 +132,14 @@
 			</center>
 			
 			<br>
-		<!--<div>
+			<center>
+		<div>
 			<br>
 			<p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15773.655531229731!2d80.3992645!3d8.7470711!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1579968342883!5m2!1sen!2slk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15773.655531229731!2d80.3992645!3d8.7470711!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1579968342883!5m2!1sen!2slk" width="75%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 			</p>
-			Area : 
-			<input type="text" name="area">
-		</div>-->
+		</div>
+		</center>
 
 		<footer>
 		<div class="container">
