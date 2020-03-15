@@ -63,7 +63,7 @@
 
 			<center>
 			<div>
-				<form action="smartFarmingConnect.php" method="POST">
+				<form action="smartFarming.php" method="POST">
 					Area : <input type="text" name="area" placeholder="">
 				<!--	Month : <input type="text" name="month" placeholder="">-->
 					Crop : <input type="text" name="crop" placeholder="">
@@ -71,6 +71,64 @@
 				</form>
 
 				<br>
+
+				<table border="4" width="90%" cellpadding="8" cellspacing="20">
+					<tr>
+						<th>Crop ID</th>
+						<th>Crop Name</th>
+						<th>District Name</th>
+						<th>Tempreature</th>
+						<th>Water Level</th>
+						<th>Soil</th>
+						<th>Fertilizer</th>
+						<th>Time Period</th>
+					</tr>
+				
+
+				<?php
+					$conn=mysqli_connect("localhost","root","","testPHP");
+					$area=$_POST['area'];
+					/*$month=$_POST['month'];*/
+					$crop=$_POST['crop'];
+					if($area || $crop){
+					/*	$show="SELECT * FROM crop where area='$area' OR crop='$crop'";  */
+						$show="SELECT c.cropID,c.cropName,c.temperature,c.waterlevel,c.soil,c.fertilizer,c.timeperiod,d.districtName FROM crop as c,district as d where c.cropID=d.cropID AND (districtName='$area' OR cropName='$crop')";
+						$result=mysqli_query($conn,$show);
+						while ($rows=mysqli_fetch_array($result)) {
+							echo "<tr>";
+							echo "<td>";
+							echo $rows['cropID'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['cropName'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['districtName'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['temperature'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['waterlevel'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['soil'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['fertilizer'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['timeperiod'];
+							echo "</td>";
+							echo "</tr>";
+							echo "<br/>";
+						}
+					}
+					else{
+							echo "No Crop Available for your Searching.......";
+					}
+				?>
+				</table>
 
 			<!--	<table border="2" width="500" cellpadding="10" cellspacing="25">
 					<tr>
