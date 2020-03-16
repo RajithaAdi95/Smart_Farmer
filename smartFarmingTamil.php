@@ -30,7 +30,7 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
-				<h5><a href="smartFarmingSin.php">සිංහල</a>	<a href="smartFarmingTamil.php">தமிழ்</a></h5>
+				<h5><a href="smartFarming.php">English</a>	<a href="smartFarmingSin.php">සිංහල</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -43,19 +43,19 @@
 
 		
 		<div class="icons">
-			<a href="https://www.facebook.com/" class="facebook">Facebook<i class="fa fa-facebook-f"></i></a>
-			<a href="https://twitter.com/login" class="twitter">Twitter<i class="fa fa-twitter"></i></a>
-			<a href="https://www.instagram.com" class="instagram">Instagram<i class="fa fa-instagram"></i></a>
-			<a href="https://www.youtube.com/" class="youtube">Youtube<i class="fa fa-youtube"></i></a>
+			<a href="https://www.facebook.com/" class="facebook">முகநூல்<i class="fa fa-facebook-f"></i></a>
+			<a href="https://twitter.com/login" class="twitter">கீச்சகம்<i class="fa fa-twitter"></i></a>
+			<a href="https://www.instagram.com" class="instagram">படவரி<i class="fa fa-instagram"></i></a>
+			<a href="https://www.youtube.com/" class="youtube">வலைஒளி<i class="fa fa-youtube"></i></a>
 		</div>
 		
 		<div class="menu-bar">
 			<ul>
-				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
+				<li><a href="indexTamil.html"><i class="fa fa-home"></i>முகப்பக்கம்</a></li>
+				<li><a href="aboutUsTamil.html"><i class="fa fa-user"></i>விபரம்</a></li>
 				<li class="active"><a href="#">SmartFarming</a></li>
-				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
-				<li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+				<li><a href="newsTamil.html"><i class="fa fa-comment-lines"></i>செய்தி</a></li>
+				<li><a href="contactTamil.html"><i class="fa fa-phone"></i>தொடர்பு</a></li>
 			</ul>
 		</div>
 		</div>
@@ -64,11 +64,11 @@
 
 			<center>
 			<div>
-				<form action="smartFarmingConnect.php" method="POST">
-					Area : <input type="text" name="area" placeholder="">
+				<form action="smartFarmingConnectTamil.php" method="POST">
+					பரப்பளவு : <input type="text" name="area" placeholder="">
 				<!--	Month : <input type="text" name="month" placeholder="">-->
-					Crop : <input type="text" name="crop" placeholder="">
-					<br></b><br><button type="submit" name="search">search</button>
+					பயிர் : <input type="text" name="crop" placeholder="">
+					<br></b><br><button type="submit" name="search">தேடல்</button>
 				</form>
 
 				<br>

@@ -29,8 +29,8 @@
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
-				<a href="index.html">Logout</a>
-				<h5><a href="smartFarmingSin.php">සිංහල</a>	<a href="smartFarmingTamil.php">தமிழ்</a></h5>
+				<a href="indexSinhala.html">Logout</a>
+				<h5><a href="smartFarmingConnect.php">English</a>	<a href="smartFarmingConnectTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -43,19 +43,19 @@
 
 		
 		<div class="icons">
-			<a href="https://www.facebook.com/" class="facebook">Facebook<i class="fa fa-facebook-f"></i></a>
-			<a href="https://twitter.com/login" class="twitter">Twitter<i class="fa fa-twitter"></i></a>
-			<a href="https://www.instagram.com" class="instagram">Instagram<i class="fa fa-instagram"></i></a>
-			<a href="https://www.youtube.com/" class="youtube">Youtube<i class="fa fa-youtube"></i></a>
+			<a href="https://www.facebook.com/" class="facebook">ෆේස්බුක්<i class="fa fa-facebook-f"></i></a>
+			<a href="https://twitter.com/login" class="twitter">ට්විටර්<i class="fa fa-twitter"></i></a>
+			<a href="https://www.instagram.com" class="instagram">ඉන්ස්ටග්රෑම්<i class="fa fa-instagram"></i></a>
+			<a href="https://www.youtube.com/" class="youtube">යූ ටියුබ්<i class="fa fa-youtube"></i></a>
 		</div>
 		
 		<div class="menu-bar">
 			<ul>
-				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
+				<li><a href="indexSinhala.html"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
+				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>පුවත්</a></li>
 				<li class="active"><a href="#">SmartFarming</a></li>
-				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
-				<li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+				<li><a href="newsSinhala.html"><i class="fa fa-comment-lines"></i>අමතන්න</a></li>
+				<li><a href="contactSinhala.html"><i class="fa fa-phone"></i>ලොග් වීම</a></li>
 			</ul>
 		</div>
 		</div>
@@ -63,40 +63,84 @@
 
 
 			<center>
+			<br>
 			<div>
-				<form action="smartFarmingConnect.php" method="POST">
-					Area : <input type="text" name="area" placeholder="">
+				<form action="smartFarmingConnectSinhala.php" method="POST">
+					ප්‍රදේශය : <input type="text" name="area" placeholder="">
 				<!--	Month : <input type="text" name="month" placeholder="">-->
-					Crop : <input type="text" name="crop" placeholder="">
-					<br></b><br><button type="submit" name="search">search</button>
+					බෝග : <input type="text" name="crop" placeholder="">
+					<br></b><br><button type="submit" name="search">සෙවීම</button>
 				</form>
 
-				<br>
-
-				
-			<!--	<table border="2" width="500" cellpadding="10" cellspacing="25">
+				<table border="4" width="90%" cellpadding="8" cellspacing="20">
 					<tr>
-						<th>Crop ID</th>
-						<th>Crop Name</th>
-						<th>District Name</th>
-						<th>Tempreature</th>
-						<th>Water Level</th>
-						<th>Soil</th>
-						<th>Fertilizer</th>
-						<th>Time Period</th>
+						<th>බෝග හැඳුනුම්පත</th>
+						<th>බෝගයේ නම</th>
+						<th>දිස්ත්‍රික් නාමය</th>
+						<th>උෂ්ණත්වය</th>
+						<th>ජල මට්ටම</th>
+						<th>පාංශු</th>
+						<th>පොහොර</th>
+						<th>කාල සීමාව</th>
 					</tr>
-				</table>	-->
+				
+
+				<?php
+					$conn=mysqli_connect("localhost","root","","testPHP");
+					$area=$_POST['area'];
+					/*$month=$_POST['month'];*/
+					$crop=$_POST['crop'];
+					if($area || $crop){
+					/*	$show="SELECT * FROM crop where area='$area' OR crop='$crop'";  */
+						$show="SELECT c.cropID,c.cropName,c.temperature,c.waterlevel,c.soil,c.fertilizer,c.timeperiod,d.districtName FROM crop as c,district as d where c.cropID=d.cropID AND (districtName='$area' OR cropName='$crop')";
+						$result=mysqli_query($conn,$show);
+						while ($rows=mysqli_fetch_array($result)) {
+							echo "<tr>";
+							echo "<td>";
+							echo $rows['cropID'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['cropName'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['districtName'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['temperature'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['waterlevel'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['soil'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['fertilizer'];
+							echo "</td>";
+							echo "<td>";
+							echo $rows['timeperiod'];
+							echo "</td>";
+							echo "</tr>";
+							echo "<br/>";
+						}
+					}
+					else{
+							echo "No Crop Available for your Searching.......";
+					}
+				?>
+				</table>
 			</div>
 			</center>
 			
-		<!--<div>
+			<br>
+			<center>
+		<div>
 			<br>
 			<p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15773.655531229731!2d80.3992645!3d8.7470711!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1579968342883!5m2!1sen!2slk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15773.655531229731!2d80.3992645!3d8.7470711!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1579968342883!5m2!1sen!2slk" width="75%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 			</p>
-			Area : 
-			<input type="text" name="area">
-		</div>-->
+		</div>
+		</center>
 
 		<footer>
 		<div class="container">
@@ -114,7 +158,7 @@
 
 				<div class="col-md-4 mid-row">
 					<h4>Follow Us</h4>
-					<h3><a href="index.html">Smart Farming</a></h3>
+					<h3><a href="indexSinhala.html">Smart Farming</a></h3>
 					<h6>Copyright <i class="fa fa-copyright"></i> 2019. All Rights reserved.</h6>
 					<!--<p>Facebbo Twitter Youtube</p>
 					<div class="social-icon">

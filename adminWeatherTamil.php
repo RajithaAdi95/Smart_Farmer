@@ -2,10 +2,11 @@
 	session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Smart Farming</title>
+		<title>Home</title>
 		<link rel="icon" href="img/index.png">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,24 +14,18 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<meta name="viewport" content="width=device-width, initial -scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<style>
-			#map-canvas{
-				width: 400px;
-				height: 400px;
-			}
-		</style>
 	</head>
 
 	<body>
 		
-		
+	
 
 		<div class="banner"> 
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
-				<a href="index.html">Logout</a>
-				<h5><a href="smartFarmingSin.php">සිංහල</a>	<a href="smartFarmingTamil.php">தமிழ்</a></h5>
+				<a href="indexTamil.html">Logout</a>
+				<h5><a href="AdminWeather.php">English</a>	<a href="adminWeatherSinhala.php">සිංහල</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -39,64 +34,31 @@
 					<button class="button1" type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
+		<!--	<div>
+				<a href="https://www.google.com">Login</a>
+			</div>	-->
 		</header>
 
 		
 		<div class="icons">
-			<a href="https://www.facebook.com/" class="facebook">Facebook<i class="fa fa-facebook-f"></i></a>
-			<a href="https://twitter.com/login" class="twitter">Twitter<i class="fa fa-twitter"></i></a>
-			<a href="https://www.instagram.com" class="instagram">Instagram<i class="fa fa-instagram"></i></a>
-			<a href="https://www.youtube.com/" class="youtube">Youtube<i class="fa fa-youtube"></i></a>
+			<a href="https://www.facebook.com/" class="facebook">முகநூல்<i class="fa fa-facebook-f"></i></a>
+			<a href="https://twitter.com/login" class="twitter">கீச்சகம்<i class="fa fa-twitter"></i></a>
+			<a href="https://www.instagram.com" class="instagram">படவரி<i class="fa fa-instagram"></i></a>
+			<a href="https://www.youtube.com/" class="youtube">வலைஒளி<i class="fa fa-youtube"></i></a>
 		</div>
 		
 		<div class="menu-bar">
 			<ul>
-				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
-				<li class="active"><a href="#">SmartFarming</a></li>
-				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
-				<li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+				<li><a href="indexTamil.html"><i class="fa fa-home"></i>முகப்பக்கம்</a></li>
+				<li><a href="aboutUsTamil.html"><i class="fa fa-user"></i>விபரம்</a></li>
+				<li><a href="newsTamil.html"><i class="fa fa-comment-lines"></i>செய்தி</a></li>
+				<li><a href="contactTamil.html"><i class="fa fa-phone"></i>தொடர்பு</a></li>
+				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>Weather</a></li>
 			</ul>
 		</div>
 		</div>
-		<br>
 
-
-			<center>
-			<div>
-				<form action="smartFarmingConnect.php" method="POST">
-					Area : <input type="text" name="area" placeholder="">
-				<!--	Month : <input type="text" name="month" placeholder="">-->
-					Crop : <input type="text" name="crop" placeholder="">
-					<br></b><br><button type="submit" name="search">search</button>
-				</form>
-
-				<br>
-
-				
-			<!--	<table border="2" width="500" cellpadding="10" cellspacing="25">
-					<tr>
-						<th>Crop ID</th>
-						<th>Crop Name</th>
-						<th>District Name</th>
-						<th>Tempreature</th>
-						<th>Water Level</th>
-						<th>Soil</th>
-						<th>Fertilizer</th>
-						<th>Time Period</th>
-					</tr>
-				</table>	-->
-			</div>
-			</center>
-			
-		<!--<div>
-			<br>
-			<p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15773.655531229731!2d80.3992645!3d8.7470711!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1579968342883!5m2!1sen!2slk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-			</p>
-			Area : 
-			<input type="text" name="area">
-		</div>-->
+		
 
 		<footer>
 		<div class="container">
@@ -114,7 +76,7 @@
 
 				<div class="col-md-4 mid-row">
 					<h4>Follow Us</h4>
-					<h3><a href="index.html">Smart Farming</a></h3>
+					<h3><a href="indexTamil.html">Smart Farming</a></h3>
 					<h6>Copyright <i class="fa fa-copyright"></i> 2019. All Rights reserved.</h6>
 					<!--<p>Facebbo Twitter Youtube</p>
 					<div class="social-icon">
@@ -180,6 +142,16 @@
 			});
 		});
 	</script>	
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.6.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.6.2/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 
 	</body>
 </html>

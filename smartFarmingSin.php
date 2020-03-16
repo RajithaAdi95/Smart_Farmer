@@ -30,7 +30,7 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
-				<h5><a href="smartFarmingSin.php">සිංහල</a>	<a href="smartFarmingTamil.php">தமிழ்</a></h5>
+				<h5><a href="smartFarming.php">English</a>	<a href="smartFarmingTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -43,19 +43,19 @@
 
 		
 		<div class="icons">
-			<a href="https://www.facebook.com/" class="facebook">Facebook<i class="fa fa-facebook-f"></i></a>
-			<a href="https://twitter.com/login" class="twitter">Twitter<i class="fa fa-twitter"></i></a>
-			<a href="https://www.instagram.com" class="instagram">Instagram<i class="fa fa-instagram"></i></a>
-			<a href="https://www.youtube.com/" class="youtube">Youtube<i class="fa fa-youtube"></i></a>
+			<a href="https://www.facebook.com/" class="facebook">ෆේස්බුක්<i class="fa fa-facebook-f"></i></a>
+			<a href="https://twitter.com/login" class="twitter">ට්විටර්<i class="fa fa-twitter"></i></a>
+			<a href="https://www.instagram.com" class="instagram">ඉන්ස්ටග්රෑම්<i class="fa fa-instagram"></i></a>
+			<a href="https://www.youtube.com/" class="youtube">යූ ටියුබ්<i class="fa fa-youtube"></i></a>
 		</div>
 		
 		<div class="menu-bar">
 			<ul>
-				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
+				<li><a href="indexSinhala.html"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
+				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>අපි ගැන</a></li>
 				<li class="active"><a href="#">SmartFarming</a></li>
-				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
-				<li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+				<li><a href="newsSinhala.html"><i class="fa fa-comment-lines"></i>පුවත්</a></li>
+				<li><a href="contactSinhala.html"><i class="fa fa-phone"></i>අමතන්න</a></li>
 			</ul>
 		</div>
 		</div>
@@ -64,11 +64,11 @@
 
 			<center>
 			<div>
-				<form action="smartFarmingConnect.php" method="POST">
-					Area : <input type="text" name="area" placeholder="">
+				<form action="smartFarmingConnectSinhala.php" method="POST">
+					ප්‍රදේශය : <input type="text" name="area" placeholder="">
 				<!--	Month : <input type="text" name="month" placeholder="">-->
-					Crop : <input type="text" name="crop" placeholder="">
-					<br></b><br><button type="submit" name="search">search</button>
+					බෝග : <input type="text" name="crop" placeholder="">
+					<br></b><br><button type="submit" name="search">සෙවීම</button>
 				</form>
 
 				<br>

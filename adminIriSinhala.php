@@ -6,27 +6,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>HomeSinhala</title>
+		<title>Home</title>
 		<link rel="icon" href="img/index.png">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<meta name="viewport" content="width=device-width, initial -scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie-edge">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" href="lightbox.min.css">
-		<link rel="stylesheet" href="lightbox.css">
-		<script src="lightbox-plus-jquery.min.js"></script>
 	</head>
 
 	<body>
 		
+	
+
 		<div class="banner"> 
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
-				<h5><a href="index.html">English</a>	<a href="indexTamil.html">தமிழ்</a></h5>
+				<a href="indexSinhala.html">Logout</a>
+				<h5><a href="AdminIrigation.php">English</a>	<a href="adminIriTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -35,38 +34,12 @@
 					<button class="button1" type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
+		<!--	<div>
+				<a href="https://www.google.com">Login</a>
+			</div>	-->
 		</header>
 
-	<!--	<nav>
-			<input type="checkbox" id="check">
-			<label for="check" class="checkbtn">
-				<i class="fas fa-bars"></i>
-			</label>
-
-		<nav>-->
-
-		<div class="menu-bar">
-			<ul>
-				<li class="active"><a href="#"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
-				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>අපි ගැන</a></li>
-				<li><a href="newsSinhala.html"><i class="fa fa-comment-lines"></i>පුවත්</a></li>
-				<li><a href="contactSinhala.html"><i class="fa fa-phone"></i>අමතන්න</a></li>
-				<li><a href="loggingSinhala.php"><i class="fa fa-sign-in-alt"></i>ලොග් වීම</a></li>
-			</ul>
-		</div>
 		
-
-		<div id="slider">
-			<figure>
-				<img src="image/img5.jpg" width="100%" height="500px">
-				<img src="image/img2.jpg" width="100%" height="500px">
-				<img src="image/img3.jpg" width="100%" height="500px">
-				<img src="image/img4.jpg" width="100%" height="500px">
-				<img src="image/img6.jpg" width="100%" height="500px">
-			</figure>
-		</div>
-
-
 		<div class="icons">
 			<a href="https://www.facebook.com/" class="facebook">ෆේස්බුක්<i class="fa fa-facebook-f"></i></a>
 			<a href="https://twitter.com/login" class="twitter">ට්විටර්<i class="fa fa-twitter"></i></a>
@@ -74,37 +47,18 @@
 			<a href="https://www.youtube.com/" class="youtube">යූ ටියුබ්<i class="fa fa-youtube"></i></a>
 		</div>
 		
+		<div class="menu-bar">
+			<ul>
+				<li><a href="indexSinhala.html"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
+				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>අපි ගැන</a></li>
+				<li><a href="newsSinhala.html"><i class="fa fa-comment-lines"></i>පුවත්</a></li>
+				<li><a href="contactSinhala.html"><i class="fa fa-phone"></i>අමතන්න</a></li>
+				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>Irigation</a></li>
+			</ul>
+		</div>
 		</div>
 
-		<br>
-		<center>
-			<section style="border-style:solid;border-color:green;border-width:8px;width:60%;">
-				<h1 style="background-color:powderblue"><center>ස්මාර්ට් ගොවිතැන යනු කුමක්ද ? </center></h1>
-				<h5 style="line-height: 40px"><center><b>ස්මාර්ට් ගොවිතැන</b> කෘෂිකාර්මික නිෂ්පාදනවල ප්‍රමාණය හා ගුණාත්මකභාවය වැඩි කිරීම සඳහා නවීන තාක්‍ෂණය භාවිතා කරන ගොවි කළමනාකරණ සංකල්පයකි. 21 වන සියවසේ ගොවීන්ට <b>ජීපීඑස්, පාංශු පරිලෝකනය, දත්ත කළමනාකරණය, කාලගුණ අනාවැකි සහ අන්තර්ජාලය</b> දේවල් තාක්ෂණයන් සඳහා ප්‍රවේශය ඇත.</center></h5>
-			</section>
-		</center>
-
-		<br>
-		<h1><center>රූප ගැලරිය</center></h1>
-		<center>
-		<div class="gallery">
-			<a href="image/image.jpg" data-lightbox="mygallary"><img src="image/image.jpg"></a>
-			<a href="image/img4.jpg" data-lightbox="mygallary"><img src="image/img4.jpg"></a>
-			<a href="image/img5.jpg" data-lightbox="mygallary"><img src="image/img5.jpg"></a>
-			<a href="image/img6.jpg" data-lightbox="mygallary"><img src="image/img6.jpg"></a>
-			<a href="image/imgn7.jpg" data-lightbox="mygallary"><img src="image/imgn7.jpg"></a>
-			<a href="image/imgn4.jpg" data-lightbox="mygallary"><img src="image/imgn4.jpg"></a>
-			<a href="image/imgn8.jpg" data-lightbox="mygallary"><img src="image/imgn8.jpg"></a>
-			<a href="image/imgn1.jpg" data-lightbox="mygallary"><img src="image/imgn1.jpg"></a>
-			<a href="image/imgn2.jpg" data-lightbox="mygallary"><img src="image/imgn2.jpg"></a>
-			<a href="image/imgn3.jpg" data-lightbox="mygallary"><img src="image/imgn3.jpg"></a>
-			<a href="image/imgn6.jpg" data-lightbox="mygallary"><img src="image/imgn6.jpg"></a>
-			<a href="image/imgn5.jpg" data-lightbox="mygallary"><img src="image/imgn5.jpg"></a>
-		</div>
-		</center>
-
-
-
+		
 
 		<footer>
 		<div class="container">

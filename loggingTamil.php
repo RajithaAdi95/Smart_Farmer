@@ -1,32 +1,66 @@
 <?php
 	session_start();
-?>
 
+	$conn = new mysqli("localhost","root","","testPHP");
+
+	$msg="";	
+
+	if (isset($_POST['login'])) {
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$password = sha1($password);
+		$usertype = $_POST['usertype'];
+
+		$sql = "SELECT * FROM logs WHERE Username=? AND Password=? AND UserType=?";
+		$stmt=$conn->prepare($sql);
+		$stmt->bind_param("sss",$username,$password,$usertype);
+		$stmt->execute();
+		$result=$stmt->get_result();
+		$row = $result->fetch_assoc();
+
+		session_regenerate_id();
+		$_SESSION['username'] = $row['username'];
+		$_SESSION['role'] = $row['UserType'];
+		session_write_close();
+
+		if ($result->num_rows==1 && $_SESSION['role']=='Admin') {
+			if ($username=='AdminWeather') {
+				header("location:adminWeatherTamil.php");
+			}
+			else{
+				header("location:adminIriTamil.php");
+			}
+		}
+		else if ($result->num_rows==1 && $_SESSION['role']=='User') {
+			header("location:smartFarmingTamil.php");
+		}
+		else{
+			$msg = "பயனர்பெயர் அல்லது கடவுச்சொல் தவறானது...";
+		}
+	}
+?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Home</title>
+		<title>Logging</title>
 		<link rel="icon" href="img/index.png">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<meta name="viewport" content="width=device-width, initial -scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie-edge">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" href="lightbox.min.css">
-		<link rel="stylesheet" href="lightbox.css">
-		<script src="lightbox-plus-jquery.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!--<link rel="stylesheet" type="text/css" href="logReg.php">-->
 	</head>
 
 	<body>
-		
 		<div class="banner"> 
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
-				<h5><a href="index.html">English</a>	<a href="indexSinhala.html">සිංහල</a></h5>
+				<h5><a href="logging.php">English</a>	<a href="loggingSinhala.php">සිංහල</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -35,75 +69,58 @@
 					<button class="button1" type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
+		<!--	<div>
+				<a href="https://www.google.com">Login</a>
+			</div>	-->
 		</header>
 
-	<!--	<nav>
-			<input type="checkbox" id="check">
-			<label for="check" class="checkbtn">
-				<i class="fas fa-bars"></i>
-			</label>
-
-		<nav>-->
-
-		<div class="menu-bar">
-			<ul>
-				<li class="active"><a href="#"><i class="fa fa-home"></i>முகப்பக்கம்</a></li>
-				<li><a href="aboutUsTamil.html"><i class="fa fa-user"></i>விபரம்</a></li>
-				<li><a href="newsTamil.html"><i class="fa fa-comment-lines"></i>செய்தி</a></li>
-				<li><a href="contactTamil.html"><i class="fa fa-phone"></i>தொடர்பு</a></li>
-				<li><a href="loggingTamil.php"><i class="fa fa-sign-in-alt"></i>பதிவு</a></li>
-			</ul>
-		</div>
 		
-
-		<div id="slider">
-			<figure>
-				<img src="image/img5.jpg" width="100%" height="500px">
-				<img src="image/img2.jpg" width="100%" height="500px">
-				<img src="image/img3.jpg" width="100%" height="500px">
-				<img src="image/img4.jpg" width="100%" height="500px">
-				<img src="image/img6.jpg" width="100%" height="500px">
-			</figure>
-		</div>
-
 		<div class="icons">
 			<a href="https://www.facebook.com/" class="facebook">முகநூல்<i class="fa fa-facebook-f"></i></a>
 			<a href="https://twitter.com/login" class="twitter">கீச்சகம்<i class="fa fa-twitter"></i></a>
 			<a href="https://www.instagram.com" class="instagram">படவரி<i class="fa fa-instagram"></i></a>
 			<a href="https://www.youtube.com/" class="youtube">வலைஒளி<i class="fa fa-youtube"></i></a>
 		</div>
-
+		
+		<div class="menu-bar">
+			<ul>
+				<li><a href="indexTamil.html"><i class="fa fa-home"></i>முகப்பக்கம்</a></li>
+				<li><a href="aboutUsTamil.html"><i class="fa fa-user"></i>விபரம்</a></li>
+				<li><a href="newsTamil.html"><i class="fa fa-comment-lines"></i>செய்தி</a></li>
+				<li><a href="contactTamil.html"><i class="fa fa-phone"></i>தொடர்பு</a></li>
+				<li class="active"><a href="#"><i class="fas fa-users-cog"></i>பதிவு</a></li>
+			</ul>
+		</div>
 		</div>
 
-		<br>
-		<center>
-			<section style="border-style:solid;border-color:green;border-width:8px;width:60%;">
-				<h1 style="background-color:powderblue"><center>ஸ்மார்ட் வேளாண்மை என்றால் என்ன ? </center></h1>
-				<h5 style="line-height: 40px"><center><b>ஸ்மாட் வேளாண்மை</b> என்பது விவசாய மேலாண்மை கருத்தானது  புதிய தொழில்நுட்பத்தை பயன்படுத்தி  பொருட்களின் தரம் மற்றும் அளவை அதிகரிப்பதாகும்.21 ஆம் நூற்றாண்டில் விவசாயிகளுக்கு <b> ஜி.பி.எஸ், மண் ஸ்கேனிங், தரவு மேலாண்மை, வானிலை முன்கணிப்பு மற்றும் இணையம் </b> ஆகியவற்றை அனுக வேண்டியதாக உள்ளது.</center></h5>
-			</section>
-		</center>
+		
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-5 bg-light mt-5 px-0">
+					<h3 class="text-center text-light bg-danger p-3">ஸ்மார்ட் விவசாயிற்கான பதிவு</h3>
 
-		<br>
-		<h1><center>பட தொகுப்பு</center></h1>
-		<center>
-		<div class="gallery">
-			<a href="image/image.jpg" data-lightbox="mygallary"><img src="image/image.jpg"></a>
-			<a href="image/img4.jpg" data-lightbox="mygallary"><img src="image/img4.jpg"></a>
-			<a href="image/img5.jpg" data-lightbox="mygallary"><img src="image/img5.jpg"></a>
-			<a href="image/img6.jpg" data-lightbox="mygallary"><img src="image/img6.jpg"></a>
-			<a href="image/imgn7.jpg" data-lightbox="mygallary"><img src="image/imgn7.jpg"></a>
-			<a href="image/imgn4.jpg" data-lightbox="mygallary"><img src="image/imgn4.jpg"></a>
-			<a href="image/imgn8.jpg" data-lightbox="mygallary"><img src="image/imgn8.jpg"></a>
-			<a href="image/imgn1.jpg" data-lightbox="mygallary"><img src="image/imgn1.jpg"></a>
-			<a href="image/imgn2.jpg" data-lightbox="mygallary"><img src="image/imgn2.jpg"></a>
-			<a href="image/imgn3.jpg" data-lightbox="mygallary"><img src="image/imgn3.jpg"></a>
-			<a href="image/imgn6.jpg" data-lightbox="mygallary"><img src="image/imgn6.jpg"></a>
-			<a href="image/imgn5.jpg" data-lightbox="mygallary"><img src="image/imgn5.jpg"></a>
-		</div>
-		</center>
+					<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="p-4">
+						<div class="form-group">
+							<input type="text" name="username" class="form-control form-control-lg" placeholder="பயனர்பெயர்" required="">
+						</div>
+						<div class="form-group">
+							<input type="password" name="password" class="form-control form-control-lg" placeholder="கடவுச்சொல்" required="">
+						</div>
+						<div class="form-group lead">
+							<label for="usertype"></label>
+							<center><input type="radio" name="usertype" value="admin" class="custom-radio" required>&nbsp;நிர்வாகம்  |  </input>
+							<input type="radio" name="usertype" value="user" class="custom-radio" required>&nbsp;பயனர்</input></center>
+						</div>
+						<div class="form-group">
+							<input type="submit" name="login" class="btn btn-danger btn-block" value="சமர்ப்பிக்கவும்">
+						</div>
+					<h5 class="text-danger text-center"><?= $msg; ?></h5>
+					</form>
 
-
-
+					</div>
+				</div>
+			</div>
+		
 
 		<footer>
 		<div class="container">
@@ -135,7 +152,7 @@
 					<h4>Contact Us</h4>
 					<p><i class="fas fa-map-marker-alt"></i>VCUOJ vavuniya <span class="number">80200</span></p>
 					<p><i class="fa fa-phone"></i>Call Us : <span class="number">0775158202</span></p>
-					<p><i class="fa fa-envelope-open"></i>Email Us : <span class="number"><a href="smartfarm@gmail.com" class="info">smartfarmer2k20@gmail.com</a></span></p>
+					<p><i class="fa fa-envelope-open"></i>Email Us : <span class="number"><a href="smartfarm@gmail.com" class="info">smartfarm@gmail.com</a></span></p>
 				</div>
 			</div>
 		</div>

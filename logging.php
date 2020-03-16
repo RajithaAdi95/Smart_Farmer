@@ -60,6 +60,7 @@
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
+				<h5><a href="loggingSinhala.php">සිංහල</a>	<a href="loggingTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">

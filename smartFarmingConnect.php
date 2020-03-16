@@ -30,6 +30,7 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
+				<h5><a href="smartFarmingConnectSinhala.php">සිංහල</a>	<a href="smartFarmingConnectTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
