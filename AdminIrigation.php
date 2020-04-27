@@ -25,7 +25,6 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
-				<h5><a href="adminIriSinhala.php">සිංහල</a>	<a href="adminIriTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -48,6 +47,9 @@
 		</div>
 		
 		<div class="menu-bar">
+			<div class="language">
+				<h5><a href="adminIriSinhala.php" style="color: white;">සිංහල</a>	<a href="adminIriTamil.php" style="color: white;">தமிழ்</a></h5>
+			</div>
 			<ul>
 				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
 				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>

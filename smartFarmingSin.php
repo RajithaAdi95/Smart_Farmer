@@ -30,7 +30,6 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
-				<h5><a href="smartFarming.php">English</a>	<a href="smartFarmingTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -50,10 +49,13 @@
 		</div>
 		
 		<div class="menu-bar">
+			<div class="language">
+				<h5><a href="smartFarming.php" style="color: white;">English</a>	<a href="smartFarmingTamil.php" style="color: white;">தமிழ்</a></h5>
+			</div>
 			<ul>
 				<li><a href="indexSinhala.html"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
 				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>අපි ගැන</a></li>
-				<li class="active"><a href="#">SmartFarming</a></li>
+				<li class="active"><a href="#">ස්මාර්ට් ෆාර්මින්</a></li>
 				<li><a href="newsSinhala.html"><i class="fa fa-comment-lines"></i>පුවත්</a></li>
 				<li><a href="contactSinhala.html"><i class="fa fa-phone"></i>අමතන්න</a></li>
 			</ul>

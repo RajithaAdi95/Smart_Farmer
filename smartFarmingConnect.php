@@ -30,7 +30,6 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
-				<h5><a href="smartFarmingConnectSinhala.php">සිංහල</a>	<a href="smartFarmingConnectTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -50,6 +49,9 @@
 		</div>
 		
 		<div class="menu-bar">
+			<div class="language">
+				<h5><a href="smartFarmingConnectSinhala.php" style="color: white;">සිංහල</a>	<a href="smartFarmingConnectTamil.php" style="color: white;">தமிழ்</a></h5>
+			</div>
 			<ul>
 				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
 				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
@@ -78,7 +80,7 @@
 						<th>Crop Name</th>
 						<th>District Name</th>
 						<th>Tempreature</th>
-						<th>Water Level</th>
+					<!--	<th>Water Level</th>	-->
 						<th>Soil</th>
 						<th>Fertilizer</th>
 						<th>Time Period</th>
@@ -86,13 +88,14 @@
 				
 
 				<?php
-					$conn=mysqli_connect("localhost","root","","testPHP");
+					$conn=mysqli_connect("localhost","root","","smartfarmer");
 					$area=$_POST['area'];
 					/*$month=$_POST['month'];*/
 					$crop=$_POST['crop'];
 					if($area || $crop){
 					/*	$show="SELECT * FROM crop where area='$area' OR crop='$crop'";  */
-						$show="SELECT c.cropID,c.cropName,c.temperature,c.waterlevel,c.soil,c.fertilizer,c.timeperiod,d.districtName FROM crop as c,district as d where c.cropID=d.cropID AND (districtName='$area' OR cropName='$crop')";
+					/*	$show="SELECT c.cropID,c.cropName,c.temperature,c.waterlevel,c.soil,c.fertilizer,c.timeperiod,d.districtName FROM crop as c,district as d where c.cropID=d.cropID AND (districtName='$area' OR cropName='$crop')";*/
+						$show="SELECT c.cropID,c.cropName,c.temperature,c.soil,c.fertilizer,c.timeperiod,d.districtName FROM crop as c,district as d where c.cropID=d.cropID AND (districtName='$area' OR cropName='$crop')";
 						$result=mysqli_query($conn,$show);
 						while ($rows=mysqli_fetch_array($result)) {
 							echo "<tr>";
@@ -108,9 +111,9 @@
 							echo "<td>";
 							echo $rows['temperature'];
 							echo "</td>";
-							echo "<td>";
+						/*	echo "<td>";
 							echo $rows['waterlevel'];
-							echo "</td>";
+							echo "</td>";*/
 							echo "<td>";
 							echo $rows['soil'];
 							echo "</td>";

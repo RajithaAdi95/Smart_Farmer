@@ -25,7 +25,6 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="indexSinhala.html">Logout</a>
-				<h5><a href="AdminIrigation.php">English</a>	<a href="adminIriTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -48,12 +47,15 @@
 		</div>
 		
 		<div class="menu-bar">
+			<div class="language">
+				<h5><a href="AdminIrigation.php" style="color: white;">English</a>	<a href="adminIriTamil.php" style="color: white;">தமிழ்</a></h5>
+			</div>
 			<ul>
 				<li><a href="indexSinhala.html"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
 				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>අපි ගැන</a></li>
 				<li><a href="newsSinhala.html"><i class="fa fa-comment-lines"></i>පුවත්</a></li>
 				<li><a href="contactSinhala.html"><i class="fa fa-phone"></i>අමතන්න</a></li>
-				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>Irigation</a></li>
+				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>වාරි මාර්ග</a></li>
 			</ul>
 		</div>
 		</div>

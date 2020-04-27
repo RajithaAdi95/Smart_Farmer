@@ -30,7 +30,6 @@
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
 				<a href="index.html">Logout</a>
-				<h5><a href="smartFarming.php">English</a>	<a href="smartFarmingSin.php">සිංහල</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -43,17 +42,20 @@
 
 		
 		<div class="icons">
-			<a href="https://www.facebook.com/" class="facebook">முகநூல்<i class="fa fa-facebook-f"></i></a>
-			<a href="https://twitter.com/login" class="twitter">கீச்சகம்<i class="fa fa-twitter"></i></a>
-			<a href="https://www.instagram.com" class="instagram">படவரி<i class="fa fa-instagram"></i></a>
-			<a href="https://www.youtube.com/" class="youtube">வலைஒளி<i class="fa fa-youtube"></i></a>
+			<a href="https://www.facebook.com/" class="facebook">பேஸ்புக்<i class="fa fa-facebook-f"></i></a>
+			<a href="https://twitter.com/login" class="twitter">ட்விட்டர்<i class="fa fa-twitter"></i></a>
+			<a href="https://www.instagram.com" class="instagram">இன்ஸ்டா<i class="fa fa-instagram"></i></a>
+			<a href="https://www.youtube.com/" class="youtube">யூடியூப்<i class="fa fa-youtube"></i></a>
 		</div>
 		
 		<div class="menu-bar">
+			<div class="language">
+				<h5><a href="smartFarming.php" style="color: white;">English</a>	<a href="smartFarmingSin.php" style="color: white;">සිංහල</a></h5>
+			</div>
 			<ul>
 				<li><a href="indexTamil.html"><i class="fa fa-home"></i>முகப்பக்கம்</a></li>
 				<li><a href="aboutUsTamil.html"><i class="fa fa-user"></i>விபரம்</a></li>
-				<li class="active"><a href="#">SmartFarming</a></li>
+				<li class="active"><a href="#">ஸ்மாட்பார்மிங்</a></li>
 				<li><a href="newsTamil.html"><i class="fa fa-comment-lines"></i>செய்தி</a></li>
 				<li><a href="contactTamil.html"><i class="fa fa-phone"></i>தொடர்பு</a></li>
 			</ul>

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$conn = new mysqli("localhost","root","","testPHP");
+	$conn = new mysqli("localhost","root","","smartfarmer");
 
 	$msg="";	
 
@@ -11,7 +11,7 @@
 		$password = sha1($password);
 		$usertype = $_POST['usertype'];
 
-		$sql = "SELECT * FROM logs WHERE Username=? AND Password=? AND UserType=?";
+		$sql = "SELECT * FROM logging WHERE Username=? AND Password=? AND UserType=?";
 		$stmt=$conn->prepare($sql);
 		$stmt->bind_param("sss",$username,$password,$usertype);
 		$stmt->execute();
@@ -60,7 +60,6 @@
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
-				<h5><a href="logging.php">English</a>	<a href="loggingTamil.php">தமிழ்</a></h5>
 			</div>
 			
 			<div class="search_my">
@@ -83,6 +82,9 @@
 		</div>
 		
 		<div class="menu-bar">
+			<div class="language">
+				<h5><a href="logging.php" style="color: white;">English</a>	<a href="loggingTamil.php" style="color: white;">தமிழ்</a></h5>
+			</div>
 			<ul>
 				<li><a href="indexSinhala.html"><i class="fa fa-home"></i>ප්රධාන මෙනුව</a></li>
 				<li><a href="aboutUsSinhala.html"><i class="fa fa-user"></i>අපි ගැන</a></li>
@@ -97,7 +99,7 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-5 bg-light mt-5 px-0">
-					<h3 class="text-center text-light bg-danger p-3">Smart Farmer Logging</h3>
+					<h3 class="text-center text-light bg-success p-3">Smart Farmer Logging</h3>
 
 					<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="p-4">
 						<div class="form-group">
@@ -108,11 +110,11 @@
 						</div>
 						<div class="form-group lead">
 							<label for="usertype"></label>
-							<center><input type="radio" name="usertype" value="admin" class="custom-radio" required>&nbsp;පරිපාලක  |  </input>
-							<input type="radio" name="usertype" value="user" class="custom-radio" required>&nbsp;පරිශීලක</input></center>
+							<center><input type="radio" name="usertype" value="admin" class="custom-radio" required>&nbsp;Admin  |  </input>
+							<input type="radio" name="usertype" value="user" class="custom-radio" required>&nbsp;User</input></center>
 						</div>
 						<div class="form-group">
-							<input type="submit" name="login" class="btn btn-danger btn-block" value="Submit">
+							<input type="submit" name="login" class="btn btn-success btn-block" value="Submit">
 						</div>
 					<h5 class="text-danger text-center"><?= $msg; ?></h5>
 					</form>

@@ -11,12 +11,17 @@ body{
 }
 
 header{
-	padding: 30px 30px ;
+	padding: 10px 30px ;
 	background-color: rgba(225,225,225,0.6);
 }
 .SiteName{
-	float: left;
+	float: top;
 	display: inline-block;
+	font-family: cursive;
+}
+.SiteName a{
+	font-size: 25px;
+	font-weight: bold;
 }
 .title-color{
 	text-transform: uppercase;
@@ -66,7 +71,7 @@ header{
 .icons a i{
 	margin-left: 25px;
 	background-color: white;
-	height: 30px;
+	height: 40px;
 	width: 40px;
 	color: black;
 	text-align: center;
@@ -175,7 +180,13 @@ a.active,a:hover{
 		left: 0;
 	}
 }*/
-
+.language{
+	text-align: left;
+	position: absolute;
+	padding: 25px 25px;
+	align-items: baseline;
+	word-spacing: 20px;
+}
 .menu-bar{
 	background: rgb(0,100,0);
 	text-align: center;
