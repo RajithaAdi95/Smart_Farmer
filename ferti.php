@@ -1,52 +1,9 @@
-<?php
-	session_start();
 
-	$conn = new mysqli("localhost","root","","smartfarmer");
-
-	$msg="";	
-
-	if (isset($_POST['login'])) {
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$password = sha1($password);
-		$usertype = $_POST['usertype'];
-
-		$sql = "SELECT * FROM logging WHERE Username=? AND Password=? AND UserType=?";
-		$stmt=$conn->prepare($sql);
-		$stmt->bind_param("sss",$username,$password,$usertype);
-		$stmt->execute();
-		$result=$stmt->get_result();
-		$row = $result->fetch_assoc();
-
-		session_regenerate_id();
-		$_SESSION['username'] = $row['username'];
-		$_SESSION['role'] = $row['UserType'];
-		session_write_close();
-
-		if ($result->num_rows==1 && $_SESSION['role']=='Admin') {
-			if ($username=='AdminWeather') {
-				header("location:AdminWeather.php");
-			}
-			else if($username=='AdminIrrigation'){
-				header("location:AdminIrigation.php");
-			}
-			else{
-				header("location:AdminAgri.php");
-			}
-		}
-		else if ($result->num_rows==1 && $_SESSION['role']=='User') {
-			header("location:smartFarming.php");
-		}
-		else{
-			$msg = "Username or Password is incorrect...";
-		}
-	}
-?>
-
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Logging</title>
+<head>
+		<title>Agriculture</title>
 		<link rel="icon" href="img/index.png">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,22 +11,21 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<meta name="viewport" content="width=device-width, initial -scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<!--<link rel="stylesheet" type="text/css" href="logReg.php">-->
-	</head>
-
-	<body>
+		<link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
 		<div class="banner"> 
 		<header>
 			<div class="SiteName">
 				<h1><b>Smart Farmer</b></h1>
+				<a href="index.html">Logout</a>
 			</div>
 			
 			<div class="search_my">
-				<form>
+			<!--	<form>
 					<input type="search" class="search1" placeholder="search">
-					<button class="button1" type="submit"><i class="fa fa-search"></i></button>
-				</form>
+					<button class="button1" type="submit"><i class="fa fa-search"></i></button>-
+				</form>-->
 			</div>
 		<!--	<div>
 				<a href="https://www.google.com">Login</a>
@@ -86,46 +42,62 @@
 		
 		<div class="menu-bar">
 			<div class="language">
-				<h5><a href="loggingSinhala.php" style="color: white;">සිංහල</a>	<a href="loggingTamil.php" style="color: white;">தமிழ்</a></h5>
+				<h5><a href="AdminWeatherSinhala.php" style="color: white;">සිංහල</a>	<a href="adminWeatherTamil.php" style="color: white;">தமிழ்</a></h5>
 			</div>
 			<ul>
 				<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
 				<li><a href="aboutUs.html"><i class="fa fa-user"></i>About Us</a></li>
 				<li><a href="news.html"><i class="fa fa-comment-lines"></i>News</a></li>
 				<li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
-				<li class="active"><a href="#"><i class="fas fa-users-cog"></i>Logging</a></li>
+				<li class="active"><a href="#"><i class="fa fa-cloud-sun-rain"></i>Agriculture</a></li>
 			</ul>
 		</div>
 		</div>
+<br><br><br>
+
+            <form method="post">
 
 		
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-5 bg-light mt-5 px-0">
-					<h3 class="text-center text-light bg-success p-3">Smart Farmer Logging</h3>
+			<div class="input-group" >
+			
+		<center>	
+			<label>Fertilizer(Can select multiple nutirent)</label>
+			
+			
+			<select type="text" style="color:blue;width:26%;height:40px;border-radius: 5px; border: 1px solid gray;padding: 5px 10px; font-size: 16px;" name="fertilizerName" id="fertilizerName" required=""> 
+            <option value="Nutrient">Add Nutrient...
+			</option>			
+			<option value="Sottasium dyocside(k20)">Pottasium dyocside(k20)</option>
+			<option value="Pottasium(K)">Pottasium(K)</option>
+			<option value="Pottasium(K)">Nitregen</option>
+			</select>
+			
+			<select type="text" style="color:blue;width:25%;height:40px;border-radius: 5px; border: 1px solid gray;padding: 5px 10px; font-size: 16px;" name="fertilizerUnit" id="fertilizerUnit"> 
+			<option value="Unite">Unite</option>			
+			<option value="Grams(g)">Grams(g)</option>
+			<option value="MiliGrams(mg)">MiliGrams(mg)</option>
+			<option value="g 100g-1">g 100g-1</option>
+	        </select>
+			
+			<select  type="text" style="color:blue;width:25%;height:40px;border-radius: 5px; border: 1px solid gray;padding: 5px 10px; font-size: 16px;" name="fertilizerValue" id="fertilizerValue"> 
+			<option value="Value">Value</option>			
+			<option value="13.7">13.7</option>
+			<option value="15.6">15.6</option>
+			<option value="24.8">24.8</option>
+			<option value="24.8">21.8</option>
+			<option value="24.8">4.9</option>
+			<option value="24.8">4.1</option>
+	        </select>
+		</center>
+			
+			
+		   
+		 </div>
 
-					<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" class="p-4">
-						<div class="form-group">
-							<input type="text" name="username" class="form-control form-control-lg" placeholder="username" required="">
-						</div>
-						<div class="form-group">
-							<input type="password" name="password" class="form-control form-control-lg" placeholder="password" required="">
-						</div>
-						<div class="form-group lead">
-							<label for="usertype"></label>
-							<center><input type="radio" name="usertype" value="admin" class="custom-radio" required>&nbsp;Admin  |  </input>
-							<input type="radio" name="usertype" value="user" class="custom-radio" required>&nbsp;User</input></center>
-						</div>
-						<div class="form-group">
-							<input type="submit" name="login" class="btn btn-success btn-block">
-						</div>
-					<h5 class="text-danger text-center"><?= $msg; ?></h5>
-					</form>
+		 <button  type="submit" name="add_fertilizer" style="color:white;width:20%;height:40px;border-radius: 5px; border: 1px solid gray;padding: 5px 10px; font-size: 16px; background-color: #28a745;"  >Add</button>
+		</form>
 
-					</div>
-				</div>
-			</div>
-		
+		<br><br><br>
 
 		<footer>
 		<div class="container">
@@ -145,19 +117,13 @@
 					<h4>Follow Us</h4>
 					<h3><a href="index.html">Smart Farming</a></h3>
 					<h6>Copyright <i class="fa fa-copyright"></i> 2019. All Rights reserved.</h6>
-					<!--<p>Facebbo Twitter Youtube</p>
-					<div class="social-icon">
-						<a href="#"><i class="fa fa-facebook-f"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-instagram"></i></a>
-					</div> -->
 				</div>
 
 				<div class="col-md-4 contact">
 					<h4>Contact Us</h4>
 					<p><i class="fas fa-map-marker-alt"></i>VCUOJ vavuniya <span class="number">80200</span></p>
 					<p><i class="fa fa-phone"></i>Call Us : <span class="number">0775158202</span></p>
-					<p><i class="fa fa-envelope-open"></i>Email Us : <span class="number"><a href="smartfarm@gmail.com" class="info">smartfarm@gmail.com</a></span></p>
+					<p><i class="fa fa-envelope-open"></i>Email Us : <span class="number"><a href="smartfarm@gmail.com" class="info">smartfarmer2k20@gmail.com</a></span></p>
 				</div>
 			</div>
 		</div>
@@ -219,6 +185,6 @@
 
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
-
-	</body>
+		
+</body>
 </html>
