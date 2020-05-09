@@ -76,7 +76,6 @@
 		if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			
 			$maximum =$row['maximum'];
 		}
 		} else {
@@ -93,15 +92,15 @@
         if (empty($fertilizerName)) { array_push($errors, "Fertilizer name is required"); }
 		if (empty($fertilizerUnit)) { array_push($errors, "Fertilizer unit is required"); }
 		if (empty($fertilizerValue)) { array_push($errors, "Fertilizer value is required"); }
-   
+    
    
      //create guid id for the fertilizer 
 	  
 		if (count($errors) == 0) {
-	    $query1 = "INSERT into fertilizer(guid_id,fertilizer_name,fertilizer_unit,fertilizer_value) VALUES('$maximum','$fertilizerName','$fertilizerUnit','$fertilizerValue')";						
-       mysqli_query($db, $query1); 
-
+	    $query1 = "INSERT INTO fertilizer(guid_id,fertilizer_name,fertilizer_unit,fertilizer_value) VALUES('$maximum','$fertilizerName','$fertilizerUnit','$fertilizerValue')";
+		       mysqli_query($db, $query1);
 		}
+		header('location: AdminAgri.php');
     } 
 	// ... 
 	// VIew Fetilizer
